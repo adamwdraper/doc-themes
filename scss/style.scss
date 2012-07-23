@@ -1,0 +1,385 @@
+// This is a convenient boilerplate less file for starting a project with ResponCSS
+
+@import "normalize";
+
+@import "mixins";
+
+// ResponCSS
+@import "responcss/responcss";
+
+@import "icons";
+
+
+$black: #000;
+$grayDarkest: #111;
+$grayDarker: #333;
+$grayDark: #666;
+$gray: #999;
+$grayLight: #CCC;
+$grayLighter: #DDD;
+$grayLightest: #EFEFEF;
+$white: #fff;
+
+$r-darkOrange: #E34C26;
+$r-orange: #F06529;
+$r-blue: #0092BF;
+$r-green: #6FBF4D;
+$r-gray: #EBEBEB;
+$r-yellow: #F5BA3D;
+
+$sColor: $r-darkOrange;
+$mColor: $r-orange;
+$lColor: $r-green;
+$xlColor: $r-blue;
+
+$bodyPadding: 2%;
+
+$headerBackground: $grayDarker;
+$navBarBackground: $grayLightest;
+
+/*!
+ * 
+ *  Begin Project CSS
+ *
+ */
+
+// Style Defaults ------------------------------
+a {
+    text-decoration: none;
+    @include transition(color .3s ease);
+}
+
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: $grayDarker;
+}
+
+.screens {
+    font-size: .8em;
+    line-height: 1.2em;
+    text-align: center;
+
+    div {
+        overflow: hidden;        
+        height: .2em;
+    }
+
+    .s {
+        background: $sColor;
+    }
+
+    .m {
+        background: $mColor;
+    }
+
+    .l {
+        background: $lColor;
+    }
+
+    .xl {
+        background: $xlColor;
+    }
+}
+
+header {
+    background: $headerBackground;
+    padding: 0 $bodyPadding;
+
+    .logo {
+        display: block;
+        line-height: 1em;
+        color: #999;
+        font-size: 4em;
+    }
+
+    .tagline {
+        display: block;
+        line-height: 1em;
+        color: #BBB;
+        font-size: 2em;
+    }
+}
+
+.nav {
+    background: $navBarBackground;
+
+
+    .github-links {
+        float: right;
+        text-align: right;
+    }
+
+    .button {
+        display: inline-block;
+        text-decoration: none;
+        margin: .5em 0 .5em .8em;
+        background: darkennavBarBackground;
+        padding: .5em;
+        @include border-radius(.2em);
+        @include transition(all .3s ease);
+        
+        @if lightness($navBarBackground) >= 50% {
+            background: darken($navBarBackground, 5%);
+            color: $grayDarkest;
+
+            &:hover, &:active, &:visited, &.active {
+                color: white;
+            }
+        }
+
+        @if lightness($navBarBackground) < 50% {
+            background: lighten($navBarBackground, 5%);
+            color: white;
+
+            &:hover, &:active, &:visited, &.active {
+                color: white;
+            }
+        }
+    }
+}
+
+.shares {
+    text-align: right;
+    padding: 5px $bodyPadding 0 $bodyPadding;
+}
+
+.page {
+    padding: 0 $bodyPadding;
+
+    h1 {
+        font-size: 1.3em;
+        margin-top: 2.5em;
+        margin-bottom: .4em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+        color: $grayDark;
+
+        span {
+            font-weight: normal;
+        }
+    }
+
+    p {
+        margin: .5em 0;
+    }
+
+    .content {
+        padding: 0 2%;
+    }
+}
+
+footer {
+    font-size: .9em;
+    margin: 1em 0;
+    padding-top: 1em;
+    border-top: 1px solid #CCC;
+
+    .padding {
+        padding: 0 $bodyPadding;
+        text-align: right;
+    }
+}
+
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+table {
+    width: 100%;
+    background: $grayLightest;
+    border-collapse: separate; // Done so we can round those corners!
+    @include border-radius(.3em);
+
+    // Cells
+    th,
+    td {
+        padding: 8px;
+        line-height: 1em;
+        text-align: left;
+        vertical-align: top;
+    }
+    th {
+        font-weight: bold;
+    }
+    // Bottom align for column headings
+    thead th {
+        vertical-align: bottom;
+    }
+
+    tbody {
+        
+        tr:nth-child(odd) td,
+        tr:nth-child(odd) th {
+            background-color: #DDD;
+        }
+    }
+}
+
+
+// Media Queries ------------------------------
+// Smartphones
+@media (max-width: 480px) {
+
+}
+
+// Smartphone and Tablet Devices
+@media (max-width: 767px) {
+
+    body {
+        padding-top: 0;
+    }
+
+    a {
+        color: $sColor;
+
+        &:hover {
+            color: darken($sColor, 15%);
+        }
+    }
+    
+    .m, .l, .xl {
+        color: #CCC;
+    }
+
+    .s {
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+
+
+        .logo {
+            display: inline-block;
+            color: #999;
+            font-size: 2.5em;
+            margin-top: -7px;
+            vertical-align: middle;
+        }
+    }
+
+    .nav {
+
+        .github-links {
+            float: none;
+            text-align: center;
+        }
+    }
+
+    .shares {
+        text-align: center;
+    }
+
+    .button {
+
+        &:hover, &.active {
+            background: $sColor;
+        }
+    }
+
+    .page {
+
+    }
+}
+ 
+// Portrait tablet
+@media (min-width: 768px) {
+
+    a {
+        color: $mColor;
+
+        &:hover {
+            color: darken($mColor, 15%);
+        }
+    }
+
+    .s, .l, .xl {
+        color: #CCC;
+    }
+
+    .m {
+        color: #333;
+    }
+
+    .button {
+
+        &:hover, &.active {
+            background: $mColor;
+        }
+    }
+
+    .page {
+
+    }
+}
+ 
+// Landscape tablet or desktop
+@media (min-width: 981px) {
+
+    a {
+        color: $lColor;
+
+        &:hover {
+            color: darken($lColor, 15%);
+        }
+    }
+    
+    .m, .s, .xl {
+        color: #CCC;
+    }
+
+    .l {
+        color: #333;
+    }
+
+    .button {
+
+        &:hover, &.active {
+            background: $lColor;
+        }
+    }
+
+    .page {
+
+
+    }
+}
+ 
+// Large desktop
+@media (min-width: 1210px) {
+
+    a {
+        color: $xlColor;
+
+        &:hover {
+            color: darken($xlColor, 15%);
+        }
+    }
+
+    .m, .l, .s {
+        color: #CCC;
+    }
+
+    .xl {
+        color: #333;
+    }
+
+    .button {
+
+        &:hover, &.active {
+            background: $xlColor;
+        }
+    }
+
+    .page {
+
+    }
+}
