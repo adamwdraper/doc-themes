@@ -32,8 +32,6 @@ $mColor: $r-orange;
 $lColor: $r-green;
 $xlColor: $r-blue;
 
-$bodyPadding: 2%;
-
 $headerBackground: $grayDarker;
 $navBarBackground: $grayLightest;
 
@@ -51,8 +49,9 @@ a {
 
 
 html, body {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
@@ -89,38 +88,39 @@ body {
     }
 }
 
-header {
-    background: $headerBackground;
-    padding: 0 $bodyPadding;
 
-    .logo {
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    .inner {
+        padding: 0 0 0 1em;
+    }
+
+    h1 {
         display: block;
-        line-height: 1em;
+        line-height: .7em;
         color: #999;
-        font-size: 4em;
+        font-size: 2.7em;
     }
 
     .tagline {
         display: block;
-        line-height: 1em;
+        line-height: .5em;
         color: #BBB;
-        font-size: 2em;
+        font-size: 1.5em;
     }
-}
-
-.nav {
-    background: $navBarBackground;
-
 
     .github-links {
-        float: right;
-        text-align: right;
+
     }
 
     .button {
         display: inline-block;
         text-decoration: none;
-        margin: .5em 0 .5em .8em;
+        margin: .5em 0;
         background: darkennavBarBackground;
         padding: .5em;
         @include border-radius(.2em);
@@ -144,15 +144,16 @@ header {
             }
         }
     }
-}
 
-.shares {
-    text-align: right;
-    padding: 5px $bodyPadding 0 $bodyPadding;
+    .footer {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+    }
+
 }
 
 .page {
-    padding: 0 $bodyPadding;
 
     h1 {
         font-size: 1.3em;
@@ -175,18 +176,6 @@ header {
 
     .content {
         padding: 0 2%;
-    }
-}
-
-footer {
-    font-size: .9em;
-    margin: 1em 0;
-    padding-top: 1em;
-    border-top: 1px solid #CCC;
-
-    .padding {
-        padding: 0 $bodyPadding;
-        text-align: right;
     }
 }
 
