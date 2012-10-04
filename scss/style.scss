@@ -17,7 +17,7 @@ $grayDark: #666;
 $gray: #999;
 $grayLight: #CCC;
 $grayLighter: #DDD;
-$grayLightest: #EFEFEF;
+$grayLightest: #F3F3F3;
 $white: #fff;
 
 $r-darkOrange: #E34C26;
@@ -31,9 +31,6 @@ $sColor: $r-darkOrange;
 $mColor: $r-orange;
 $lColor: $r-green;
 $xlColor: $r-blue;
-
-$headerBackground: $grayDarker;
-$navBarBackground: $grayLightest;
 
 /*!
  * 
@@ -62,6 +59,7 @@ body {
 }
 
 .screens {
+    position: fixed;
     font-size: .8em;
     line-height: 1.2em;
     text-align: center;
@@ -88,12 +86,7 @@ body {
     }
 }
 
-
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
 
     .inner {
         padding: 0 0 0 1em;
@@ -101,9 +94,10 @@ body {
 
     h1 {
         display: block;
-        line-height: .7em;
+        line-height: 2em;
         color: #999;
         font-size: 2.7em;
+        margin: 0;
     }
 
     .tagline {
@@ -111,73 +105,57 @@ body {
         line-height: .5em;
         color: #BBB;
         font-size: 1.5em;
+        margin: 0;
     }
 
     .github-links {
-
+        position: absolute;
+        top: 1em;
+        right: 1em;
     }
 
     .button {
         display: inline-block;
         text-decoration: none;
         margin: .5em 0;
-        background: darkennavBarBackground;
         padding: .5em;
         @include border-radius(.2em);
         @include transition(all .3s ease);
-        
-        @if lightness($navBarBackground) >= 50% {
-            background: darken($navBarBackground, 5%);
-            color: $grayDarkest;
+        background: $grayLightest;
+        color: $grayDarkest;
 
-            &:hover, &:active, &:visited, &.active {
-                color: white;
-            }
-        }
-
-        @if lightness($navBarBackground) < 50% {
-            background: lighten($navBarBackground, 5%);
+        &:hover, &:active, &:visited, &.active {
             color: white;
-
-            &:hover, &:active, &:visited, &.active {
-                color: white;
-            }
         }
+
+    }
+
+    .download {
+        display: none;
     }
 
     .footer {
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
+        display: none;
     }
 
 }
 
-.page {
+.content {
+    border-top: 1px solid $grayLightest;
 
-    h1 {
-        font-size: 1.3em;
-        margin-top: 2.5em;
-        margin-bottom: .4em;
-    }
-
-    h2 {
-        font-size: 1.1em;
-        color: $grayDark;
-
-        span {
-            font-weight: normal;
-        }
-    }
-
-    p {
-        margin: .5em 0;
-    }
-
-    .content {
-        padding: 0 2%;
+    .inner {
+        padding: 0em 1em 2em 1em;
     }
 }
+
+.footer {
+    border-top: 1px solid $grayLightest;
+
+    .inner {
+        padding: 1em;
+    }
+}
+
 
 
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
@@ -242,41 +220,16 @@ table {
         color: #333;
     }
 
-    header {
-        text-align: center;
+    .sidebar {
 
+        .button {
 
-        .logo {
-            display: inline-block;
-            color: #999;
-            font-size: 2.5em;
-            margin-top: -7px;
-            vertical-align: middle;
+            &:hover, &.active {
+                background: $sColor;
+            }
         }
     }
 
-    .nav {
-
-        .github-links {
-            float: none;
-            text-align: center;
-        }
-    }
-
-    .shares {
-        text-align: center;
-    }
-
-    .button {
-
-        &:hover, &.active {
-            background: $sColor;
-        }
-    }
-
-    .page {
-
-    }
 }
  
 // Portrait tablet
@@ -297,17 +250,21 @@ table {
     .m {
         color: #333;
     }
+    
+    .sidebar {
 
-    .button {
+        .button {
 
-        &:hover, &.active {
-            background: $mColor;
+            &:hover, &.active {
+                background: $mColor;
+            }
+        }
+        
+        .download {
+            display: inline-block;
         }
     }
 
-    .page {
-
-    }
 }
  
 // Landscape tablet or desktop
@@ -329,17 +286,60 @@ table {
         color: #333;
     }
 
-    .button {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
 
-        &:hover, &.active {
-            background: $lColor;
+        .inner {
+            padding: 0 0 0 1em;
+        }
+
+        h1 {
+            display: block;
+            line-height: 2.5em;
+            color: #999;
+            font-size: 2.7em;
+        }
+
+        .tagline {
+            display: block;
+            line-height: 1.5em;
+            color: #BBB;
+            font-size: 1.3em;
+        }
+
+        .github-links {
+            position: relative;
+            top: auto;
+            right: auto;
+            margin-top: .8em;
+        }
+
+        .button {
+
+            &:hover, &.active {
+                background: $lColor;
+            }
+        }
+
+        .footer {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
+    }
+
+    .content {
+
+        .inner {
+            padding: 1.5em 1em 2em 4em;
         }
     }
 
-    .page {
-
-
-    }
 }
  
 // Large desktop
@@ -361,10 +361,13 @@ table {
         color: #333;
     }
 
-    .button {
+    .sidebar {
 
-        &:hover, &.active {
-            background: $xlColor;
+        .button {
+
+            &:hover, &.active {
+                background: $xlColor;
+            }
         }
     }
 
