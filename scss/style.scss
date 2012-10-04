@@ -58,32 +58,18 @@ body {
     color: $grayDarker;
 }
 
-.screens {
+h3 {
+    color: $grayDark;
+}
+
+h4 {
+    color: $gray;
+}
+
+.header-bar {
     position: fixed;
-    font-size: .8em;
-    line-height: 1.2em;
-    text-align: center;
-
-    div {
-        overflow: hidden;        
-        height: .2em;
-    }
-
-    .s {
-        background: $sColor;
-    }
-
-    .m {
-        background: $mColor;
-    }
-
-    .l {
-        background: $lColor;
-    }
-
-    .xl {
-        background: $xlColor;
-    }
+    background: $sColor;
+    height: .3em;
 }
 
 .sidebar {
@@ -250,7 +236,11 @@ table {
     .m {
         color: #333;
     }
-    
+
+    .header-bar {
+        background: $mColor;
+    }
+
     .sidebar {
 
         .button {
@@ -286,6 +276,10 @@ table {
         color: #333;
     }
 
+    .header-bar {
+        background: $lColor;
+    }
+
     .sidebar {
         position: fixed;
         top: 0;
@@ -293,7 +287,7 @@ table {
         bottom: 0;
 
         .inner {
-            padding: 0 0 0 1em;
+            padding: 0 0 0 2em;
         }
 
         h1 {
@@ -337,7 +331,7 @@ table {
         border: none;
 
         .inner {
-            padding: 1.5em 1em 2em 4em;
+            padding: 1.5em 2em 2em 2em;
         }
     }
 
@@ -365,7 +359,15 @@ table {
         color: #333;
     }
 
+    .header-bar {
+            background: $xlColor;
+    }
+
     .sidebar {
+
+        .inner {
+            padding: 0 0 0 4em;
+        }
 
         .button {
 
@@ -375,7 +377,10 @@ table {
         }
     }
 
-    .page {
+    .content {
 
+        .inner {
+            padding: 1.5em 4em 2em 2em;
+        }
     }
 }
