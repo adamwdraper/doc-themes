@@ -102,9 +102,9 @@ body {
 
     .tagline {
         display: block;
-        line-height: .5em;
+        line-height: 1.5em;
         color: #BBB;
-        font-size: 1.5em;
+        font-size: 1.3em;
         margin: 0;
     }
 
@@ -142,6 +142,7 @@ body {
 
 .content {
     border-top: 1px solid $grayLightest;
+    border-bottom: 1px solid $grayLightest;
 
     .inner {
         padding: 0em 1em 2em 1em;
@@ -149,7 +150,6 @@ body {
 }
 
 .footer {
-    border-top: 1px solid $grayLightest;
 
     .inner {
         padding: 1em;
@@ -259,7 +259,7 @@ table {
                 background: $mColor;
             }
         }
-        
+
         .download {
             display: inline-block;
         }
@@ -334,12 +334,16 @@ table {
     }
 
     .content {
+        border: none;
 
         .inner {
             padding: 1.5em 1em 2em 4em;
         }
     }
 
+    .footer {
+        display: none;
+    }
 }
  
 // Large desktop
