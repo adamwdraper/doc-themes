@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>@@Title@@ | @@Tagline@@</title>
-    <meta name="description" content="A github repository from Username - https://github.com/Username">
+    <meta name="description" content="A github repository from @@username@@ - https://github.com/@@username@@">
     <meta name="author" content="">
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -20,6 +20,20 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="js/respond-min.js"></script>
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
 </head>
 <body class="cf">
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
@@ -34,15 +48,9 @@
             </p> 
             <div id="nav" class="nav"></div>
             <div class="github-links">
-                <a class="button" href="https://github.com/adamwdraper/@@Title@@"><i aria-hidden="true" class="i-github"></i> Github</a>
-                <a class="button download" href="https://github.com/adamwdraper/@@Title@@/zipball/master"><i aria-hidden="true" class="i-install"></i> .ZIP</a>
-                <a class="button download" href="https://github.com/adamwdraper/@@Title@@/tarball/master"><i aria-hidden="true" class="i-install"></i> .TGZ</a>
-            </div>
-            <div class="footer">
-                <p>
-                    This is a project by <a href="http://github.com/username">Name Here</a>
-                </p>
-                <iframe src="http://ghbtns.com/github-btn.html?user=username&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="20px"></iframe>
+                <a class="button" href="https://github.com/@@username@@/@@Title@@"><i aria-hidden="true" class="i-github"></i> Github</a>
+                <a class="button download" href="https://github.com/@@username@@/@@Title@@/zipball/master"><i aria-hidden="true" class="i-install"></i> .ZIP</a>
+                <a class="button download" href="https://github.com/@@username@@/@@Title@@/tarball/master"><i aria-hidden="true" class="i-install"></i> .TGZ</a>
             </div>
         </div>
     </div>
@@ -54,25 +62,15 @@
         </div>
     </div>
 
-    <div class="footer full">
+    <div class="footer l-thrd xl-thrd full">
         <div class="inner">
             <p>
-                This is a project by <a href="http://github.com/username">Name Here</a>
+                This is a project by <a href="http://github.com/@@username@@">Name Here</a>
             </p>
-            <iframe src="http://ghbtns.com/github-btn.html?user=username&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="20px"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=@@username@@&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="20px"></iframe>
         </div>
     </div>
 
     <script src="js/build/site-min.js"></script>
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-@@XXXXX-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
 </body>
 </html>

@@ -120,10 +120,6 @@ h4 {
         display: none;
     }
 
-    .footer {
-        display: none;
-    }
-
 }
 
 .content {
@@ -317,14 +313,6 @@ table {
                 background: $lColor;
             }
         }
-
-        .footer {
-            display: block;
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-        }
-
     }
 
     .content {
@@ -336,7 +324,13 @@ table {
     }
 
     .footer {
-        display: none;
+        display: block;
+        position: absolute;
+        bottom: 1.5em;
+        
+        .inner {
+            padding: 0 0 0 2em;
+        }
     }
 }
  
