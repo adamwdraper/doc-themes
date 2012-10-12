@@ -1,10 +1,6 @@
-/* CSS for jQuery Reveal Plugin
- * Maintained for Foundation. foundation.zurb.com
- * Free to use under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- */
-
-/* Reveal Modals ---------------------- */
+// Styles - https://github.com/adamwdraper/styles
+// Modal 0.0.1
+// -----------------------------------------------------------------
 
 .modal-bg {
     position: fixed;
@@ -81,25 +77,17 @@
 }
 
 /* Mobile */
-// @media only screen and (max-width: $screenSmall - 1) {
-//     .modal-bg {
-//         position: absolute;
-//     }
+@media only screen and (max-width:  480px) {
+    .modal-bg {
+        position: absolute;
+    }
 
-//     .modal,
-//     .modal.small,
-//     .modal.medium,
-//     .modal.large,
-//     .modal.xlarge { width: 80%; top: 15px; left: 50%; margin-left: -40%; padding: 20px; height: auto; }
-// }
-
-  /* NOTES
-  Close button entity is &#215;
-
-  Example markup
-  <div id="myModal" class="reveal-modal">
-   <h2>Awesome. I have it.</h2>
-   <p class="lead">Your couch.  I it's mine.</p>
-   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices aliquet placerat. Duis pulvinar orci et nisi euismod vitae tempus lorem consectetur. Duis at magna quis turpis mattis venenatis eget id diam. </p>
-   <a class="close-reveal-modal">&#215;</a>
-  </div> */
+    .modal, .modal.small, .modal.large {
+        width: 80%;
+        top: 15px;
+        left: 50%;
+        margin-left: -40%;
+        padding: 20px;
+        height: auto;
+    }
+}
