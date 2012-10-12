@@ -70,6 +70,7 @@ h4 {
     position: fixed;
     background: $sColor;
     height: .3em;
+    z-index: 2;
 }
 
 .sidebar {
@@ -100,6 +101,10 @@ h4 {
         right: 1em;
     }
 
+    .nav {
+        display: none;
+    }
+
     .button {
         display: inline-block;
         text-decoration: none;
@@ -109,6 +114,7 @@ h4 {
         @include transition(all .3s ease);
         background: $grayLightest;
         color: $grayDarkest;
+        border: 1px solid darken($grayLightest, 8%);
 
         &:hover, &:active, &:visited, &.active {
             color: white;
@@ -132,6 +138,7 @@ h4 {
 }
 
 .footer {
+    background: white;
 
     .inner {
         padding: 1em;
@@ -207,6 +214,7 @@ table {
         .button {
 
             &:hover, &.active {
+                border: 1px solid darken($sColor, 8%);
                 background: $sColor;
             }
         }
@@ -242,6 +250,7 @@ table {
         .button {
 
             &:hover, &.active {
+                border: 1px solid darken($mColor, 8%);
                 background: $mColor;
             }
         }
@@ -281,6 +290,7 @@ table {
         top: 0;
         left: 0;
         bottom: 0;
+        overflow: auto;
 
         .inner {
             padding: 0 0 0 2em;
@@ -307,9 +317,14 @@ table {
             margin-top: .8em;
         }
 
+        .nav {
+            display: block;
+        }
+
         .button {
 
             &:hover, &.active {
+                border: 1px solid darken($lColor, 8%);
                 background: $lColor;
             }
         }
@@ -326,7 +341,8 @@ table {
     .footer {
         display: block;
         position: absolute;
-        bottom: 1.5em;
+        bottom: 0;
+        padding-bottom: 1.5em;
         
         .inner {
             padding: 0 0 0 2em;
@@ -366,6 +382,7 @@ table {
         .button {
 
             &:hover, &.active {
+                border: 1px solid darken($xlColor, 8%);
                 background: $xlColor;
             }
         }
@@ -375,6 +392,13 @@ table {
 
         .inner {
             padding: 1.5em 4em 2em 2em;
+        }
+    }
+
+    .footer {
+
+        .inner {
+            padding: 0 0 0 4em;
         }
     }
 }
