@@ -1,0 +1,6 @@
+// Functions
+// -----------------------------------------------------------------
+
+@function pxem ($target: $baseFontSizeNum, $context: $baseFontSizeNum) {
+    @return #{$target / $context}em;
+}

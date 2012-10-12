@@ -1,0 +1,22 @@
+// Snippets of reusable CSS to develop faster and keep code readable
+// -----------------------------------------------------------------
+
+// Close
+// -----------------------
+.close {
+    color: $grayLight;
+    @include transition(color .3s ease);
+
+    &:before {
+        color: $grayLight;
+        @include transition(color .3s ease);
+    }
+
+    &:hover {
+        color: $gray;
+
+        &:before {
+            color: $gray;
+        }
+    }
+}

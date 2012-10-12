@@ -1,0 +1,19 @@
+/*!
+ * 
+ *  Styles 
+ *
+ *  https://github.com/adamwdraper/styles
+ *
+ */
+
+// import global setup
+@import "functions";
+
+@import "mixins";
+
+@import "../../normalize";
+
+@import "utilities";
+
+// ResponCss for responsive grid
+@import "../../responcss/responcss";
