@@ -168,40 +168,6 @@ h4 {
 }
 
 
-
-// Default zebra-stripe styles (alternating gray and transparent backgrounds)
-table {
-    width: 100%;
-    background: $grayLightest;
-    border-collapse: separate; // Done so we can round those corners!
-    @include border-radius(.3em);
-
-    // Cells
-    th,
-    td {
-        padding: 8px;
-        line-height: 1em;
-        text-align: left;
-        vertical-align: top;
-    }
-    th {
-        font-weight: bold;
-    }
-    // Bottom align for column headings
-    thead th {
-        vertical-align: bottom;
-    }
-
-    tbody {
-        
-        tr:nth-child(odd) td,
-        tr:nth-child(odd) th {
-            background-color: #DDD;
-        }
-    }
-}
-
-
 // Media Queries ------------------------------
 // Smartphones
 @media (max-width: 480px) {
@@ -338,7 +304,7 @@ table {
 
     .footer {
         display: block;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         padding-bottom: 1.5em;
         
